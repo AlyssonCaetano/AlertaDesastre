@@ -1,0 +1,234 @@
+:root {
+    --primary-color: #004d40;
+    --secondary-color: #e0f2f1;
+    --text-color: #333;
+    --background-color: #f5f5f5;
+    --card-bg-color: #fff;
+    --danger-color: #d32f2f;
+    --icon-color: #00897b; /* Nova cor para ícones */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 40px 0 20px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before { /* Imagem de fundo para o cabeçalho */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('header-background.png'); /* AQUI ESTÁ A IMAGEM DE CABEÇALHO */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; /* Levemente transparente para o texto ser legível */
+    z-index: 0;
+}
+
+header .container {
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+main {
+    padding: 20px 0;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Para centralizar ícone e texto */
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Removido: .card img { ... } */
+
+
+.card h3 {
+    color: var(--primary-color);
+    margin-top: 15px; /* Espaçamento após o ícone */
+    margin-bottom: 10px;
+}
+
+.icon-large {
+    font-size: 3em; /* Tamanho maior para ícones principais do card */
+    color: var(--icon-color);
+    margin-bottom: 10px;
+}
+
+.details-content {
+    display: none;
+    margin-top: 15px;
+    text-align: left;
+    width: 100%; /* Ocupa a largura total do card */
+}
+
+.details-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.details-content li {
+    background-color: #f0f0f0;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre ícone e texto na lista */
+}
+
+.details-content li i {
+    color: var(--icon-color);
+}
+
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    background-color: var(--card-bg-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.contact-item span {
+    font-weight: bold;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-medium {
+    font-size: 1.8em;
+    color: var(--icon-color);
+}
+
+.call-button {
+    background-color: var(--danger-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaçamento entre o número e o ícone do telefone */
+}
+
+.call-button:hover {
+    background-color: #b71c1c;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Acessibilidade - Garantindo foco visível */
+a:focus, button:focus, .card:focus {
+    outline: 2px solid #00c853; /* Cor de destaque para o foco */
+    outline-offset: 2px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card {
+        width: calc(100% - 40px);
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .call-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
