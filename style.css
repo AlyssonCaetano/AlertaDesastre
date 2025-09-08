@@ -5,7 +5,7 @@
     --background-color: #f5f5f5;
     --card-bg-color: #fff;
     --danger-color: #d32f2f;
-    --icon-color: #00897b; /* Nova cor para ícones */
+    --icon-color: #00897b;
 }
 
 body {
@@ -23,6 +23,25 @@ body {
     padding: 20px;
 }
 
+nav {
+    background-color: #00362c;
+    text-align: center;
+    padding: 15px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 20px;
+    transition: background-color 0.3s;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    background-color: #005a4a;
+}
+
 header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -32,17 +51,17 @@ header {
     overflow: hidden;
 }
 
-header::before { /* Imagem de fundo para o cabeçalho */
+header::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('header-background.png'); /* AQUI ESTÁ A IMAGEM DE CABEÇALHO */
+    background-image: url('header-background.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.3; /* Levemente transparente para o texto ser legível */
+    opacity: 0.3;
     z-index: 0;
 }
 
@@ -61,6 +80,17 @@ header p {
     margin-top: 10px;
     font-size: 1.2em;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+header.sub-page {
+    background-color: #004d40;
+    padding: 40px 0;
+    /* remove the before pseudo element */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header.sub-page::before {
+  display: none;
 }
 
 main {
@@ -90,7 +120,7 @@ h2 {
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Para centralizar ícone e texto */
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -100,17 +130,14 @@ h2 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Removido: .card img { ... } */
-
-
 .card h3 {
     color: var(--primary-color);
-    margin-top: 15px; /* Espaçamento após o ícone */
+    margin-top: 15px;
     margin-bottom: 10px;
 }
 
 .icon-large {
-    font-size: 3em; /* Tamanho maior para ícones principais do card */
+    font-size: 3em;
     color: var(--icon-color);
     margin-bottom: 10px;
 }
@@ -119,7 +146,7 @@ h2 {
     display: none;
     margin-top: 15px;
     text-align: left;
-    width: 100%; /* Ocupa a largura total do card */
+    width: 100%;
 }
 
 .details-content ul {
@@ -134,13 +161,12 @@ h2 {
     border-radius: 4px;
     display: flex;
     align-items: center;
-    gap: 10px; /* Espaçamento entre ícone e texto na lista */
+    gap: 10px;
 }
 
 .details-content li i {
     color: var(--icon-color);
 }
-
 
 .contact-list {
     display: flex;
@@ -182,7 +208,7 @@ h2 {
     transition: background-color 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 8px; /* Espaçamento entre o número e o ícone do telefone */
+    gap: 8px;
 }
 
 .call-button:hover {
@@ -197,9 +223,67 @@ footer {
     margin-top: 40px;
 }
 
+.content-section {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.content-section h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-box {
+    background-color: #fff3e0;
+    border: 1px solid #ffcc80;
+    color: #e65100;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#carregar-dados {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#carregar-dados:hover {
+    background-color: #004d40;
+}
+
+#abrigos-lista {
+    list-style-type: none;
+    padding: 0;
+}
+
+#abrigos-lista li {
+    background-color: #f0f4c3;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 /* Acessibilidade - Garantindo foco visível */
 a:focus, button:focus, .card:focus {
-    outline: 2px solid #00c853; /* Cor de destaque para o foco */
+    outline: 2px solid #00c853;
     outline-offset: 2px;
 }
 

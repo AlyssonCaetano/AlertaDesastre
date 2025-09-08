@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alertas Locais</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="sub-page">
+        <div class="container">
+            <h1>Alertas e Abrigos Locais</h1>
+            <p>Informações de emergência em tempo real para sua localização.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="geolocalizacao-section">
+            <div class="container">
+                <h2>Sua Localização</h2>
+                <div class="status-box" id="status-geolocalizacao">
+                    <p>Clique abaixo para carregar as informações com base na sua localização.</p>
+                    <button id="carregar-dados" onclick="getEmergencyInfo()">Carregar Dados de Emergência</button>
+                    <p id="localizacao-status"></p>
+                </div>
+
+                <div id="dados-emergencia" style="display: none;">
+                    
+                    <div class="content-section">
+                        <h3><i class="fas fa-bell"></i> Alertas Ativos</h3>
+                        <div id="alertas-dinamicos">
+                            <p>Nenhum alerta ativo no momento.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h3><i class="fas fa-house-chimney-medical"></i> Abrigos Temporários Próximos</h3>
+                        <ul id="abrigos-lista">
+                            <li><i class="fas fa-location-dot"></i> Carregando...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Plataforma de Informações de Emergência. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="geo-emergencia.js"></script> </body>
+</html>
